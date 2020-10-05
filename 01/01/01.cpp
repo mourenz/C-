@@ -52,7 +52,7 @@ int _tmain(int argc, _TCHAR* argv[])
 	cout << flag << endl; //1
 
 
-	switch (flag)   // 不能为字符串 
+	switch (flag)   // 不能为字符串 not string
 	{
 		case true:
 			cout << "true" << endl;
