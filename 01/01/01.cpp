@@ -52,7 +52,7 @@ int _tmain(int argc, _TCHAR* argv[])
 	cout << flag << endl; //1
 
 
-	switch (flag)
+	switch (flag)   // ²»ÄÜÎª×Ö·û´® 
 	{
 		case true:
 			cout << "true" << endl;
