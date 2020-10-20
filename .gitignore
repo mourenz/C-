@@ -31,6 +31,7 @@
 *.out
 *.app
 
+<<<<<<< HEAD
 *.sdf
 *.sln
 *.opensdf
@@ -39,3 +40,6 @@ Debug/
 ipch/
 *.vcxproj
 *.filters
+=======
+.vscode
+>>>>>>> db81524b3a931362acee0b29b1a6caaa5aeddabf
