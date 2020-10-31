@@ -5,7 +5,7 @@
 using namespace std;
 #pragma warning(disable:4996)  // ºöÂÔ scanf  unsafe
 
-int main(){
+int main02(){
 	int  a;
 	cout << "ÊäÈëa µÄÖµ" << endl;
 	scanf("%d", &a);
