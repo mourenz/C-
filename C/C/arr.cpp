@@ -47,6 +47,14 @@ int main(){
 	}
 
 
+	//字符串 "%s" 遇到  反斜杠0 结束
+	char charArray[5] = { 'h', 'e', 'l', 'l', '0' }; // 只是一个字符数组  %s 打印会出现乱码
+	char stringArray[] = { 'h', 'e', 'l', 'l', '0','\0'};
+	printf("%s\n",charArray);
+	printf("%s\n",stringArray);
+
+	
+
 
 	//
 	getchar();
