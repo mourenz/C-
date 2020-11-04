@@ -1,7 +1,9 @@
 #include<stdio.h>
 #include<math.h>
 #include<iostream>
-#include<string.h> // 
+#include<string.h> //  strlen()
+#include<stdlib.h>
+#include<time.h>
 using namespace std;
 #pragma warning(disable:4996)  
 
@@ -59,39 +61,72 @@ int main(){
 	char ch1[] = "hello";  //字符串转换为字符数组 字符数组结尾 必须为 '\0' ch1 总长度为 6 
 	char ch2[] = "world";
 	char ch3[20];
-	int p,m;
+	int p, m;
 	p = m = 0;
-	while (ch1[p]!='\0')
+	while (ch1[p] != '\0')
 	{
-		ch3[p]=ch1[p];
+		ch3[p] = ch1[p];
 		p++;
 	}
-	
-	while(ch2[m]!='\0')
-	{
-		ch3[p+m]=ch2[m];
-		m++; 
-	}
-	ch3[p+m]='\0';
-	
-	for(int i=0;i<11;i++){
-		cout<<ch3[i]<<",";
-	}
-	cout<<endl;
 
-	std::cout<<"输入五个汉字"<<endl;
+	while (ch2[m] != '\0')
+	{
+		ch3[p + m] = ch2[m];
+		m++;
+	}
+	ch3[p + m] = '\0';
+
+	for (int i = 0; i < 11; i++){
+		cout << ch3[i] << ",";
+	}
+	cout << endl;
+
+	std::cout << "输入五个汉字" << endl;
 	// 字符串的使用字符数组时 必须遇到 0 或 '\0' 结束  一：字符数组位数要大  二：手动填0结束
-	char getCharacter[11];
-	
+	//	char getCharacter[11];
+
 	//scanf("%10s",getCharacter); // 10为约束   第11位为 0
-	
+
 	//printf("%s",getCharacter); 
 	puts("hello\0world"); // 输出 为 hello 
 
-	char arr_string[] =  "hello world";
+	char arr_string[] = "hello world";
 	cout << sizeof(arr_string) << endl; //12
 	cout << strlen(arr_string) << endl; // 11  strlen() 需要 string,h 头文件
-	
+
+	cout << "===随机数====" << endl;
+	//随机数 需要导入 time.h  stdlib.h
+	srand((unsigned int)time(NULL));  //添加种子 以时间为种子
+
+	for (size_t i = 0; i < 3; i++)
+	{
+		cout << rand() % 100 << endl; // 0-99
+	}
+
+	// 随机产生6个1-32范围的不同随机数
+	int arr_random[6] = { 0 };
+	int value = 0;
+	int flag = 0;
+	int j_;
+
+	for (int i = 0; i < 6; i++){
+		value = rand() % 32 + 1;
+		// 去重
+		for (j_ = 0; j_ < flag; j_++){
+			if (value == arr[j_]){
+				i--; // 重复了 要保证6次
+				break;
+			}
+		}
+		if (j_== flag){
+			arr_random[flag++] = value;
+		}
+	}
+	cout << "6个【1-32】的不同随机数" << endl;
+	for (int i = 0; i < 6; i++){
+		cout << arr_random[i] << ",";
+	}
+
 
 
 	//
@@ -102,6 +137,7 @@ int main(){
 
 	return 0;
 }
+
 
 
 
