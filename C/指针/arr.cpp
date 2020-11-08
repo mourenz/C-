@@ -2,14 +2,15 @@
 #include<iostream>
 using namespace std;
 
-extern int copyStringOfArray(char*,char*);
+int copyStringOfArray(char*, char*);
+int copyStringOfP(char* dest, char* origin);
 
 int main(){
 	int arr[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
 	int* p = arr;
 
 	cout << *(p + 1) << endl; //2
-	
+
 	p++; //指针＋1 *sizeof(所指向的数据类型);
 	int step = p - arr; // 1  根据指针的偏移量 /sizeof(所指向的数据类型)
 	cout << step << endl;
@@ -20,13 +21,18 @@ int main(){
 	*/
 
 	//字符串拷贝 
-	char *dest="";
+	char dest[100] = {}; //不能为指针 因为没有开辟空间
 
-	copyStringOfArray(dest, "abcdefg");
+	cout << &dest[0] << endl;
+	cout << &dest[1] << endl;
+	char* origin = "abcdefg";
+
+	copyStringOfArray(dest, origin);//数组拷贝
+	copyStringOfP(dest, origin);//指针拷贝
 
 	for (size_t i = 0; i < 8; i++)
 	{
-		cout << *(dest + i) << endl;
+		cout << *(dest + i);
 	}
 
 	getchar();
@@ -36,13 +42,20 @@ int main(){
 
 }
 
-int copyStringOfArray(char dest[],char ori[]){
+int copyStringOfArray(char dest[], char ori[]){
 	int i = 0;
-	while (ori[i]!=0)
+	while (ori[i] != 0)
 	{
 		dest[i] = ori[i];
 		i++;
 	}
-	dest[i] = 0;
+	dest[i] = 0; //字符串末尾
+	return 1;
+}
+int copyStringOfP(char* dest, char* origin){
+	while (*dest++ = *origin++)
+	{
+
+	}
 	return 1;
 }
