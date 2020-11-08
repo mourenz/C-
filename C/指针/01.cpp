@@ -1,7 +1,7 @@
 #include<stdio.h>
 #include<iostream>
 using namespace std;
-int main(){
+int main01(){
 	int a = 10; //0xfffab
 	int* p;    // int* 是一个数据类型 即为指针 p里面装的值 只能是一个存放int数据的内存地址
 	p = &a;
@@ -25,10 +25,15 @@ int main(){
 	cout << *((char*)vc) << endl;
 
 
+	
+
+
 
 
 	
 	getchar();
+
+	return 0;
 
 
 
