@@ -23,8 +23,6 @@ int main(){
 	//字符串拷贝 
 	char dest[100] = {}; //不能为指针 因为没有开辟空间
 
-	cout << &dest[0] << endl;
-	cout << &dest[1] << endl;
 	char* origin = "abcdefg";
 
 	copyStringOfArray(dest, origin);//数组拷贝
@@ -34,6 +32,11 @@ int main(){
 	{
 		cout << *(dest + i);
 	}
+	cout<<endl;
+
+
+	char* p1 = &dest[3];
+	cout <<"p[-2]: "<< p1[-2] << endl; //p1[-2] == *(p-2) 当指针操作数组时 下标可以为 负数 
 
 	getchar();
 
