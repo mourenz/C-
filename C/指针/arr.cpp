@@ -5,7 +5,7 @@ using namespace std;
 int copyStringOfArray(char*, char*);
 int copyStringOfP(char* dest, char* origin);
 
-int main(){
+int main02(){
 	int arr[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
 	int* p = arr;
 
