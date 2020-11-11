@@ -26,6 +26,17 @@ int main(){
 
 	int* arr2[] = { a1, a2, a3 };
 
+	cout << arr2 << endl;
+	cout << &arr2[0] << endl; //前两者 一样 但 绝对不是 arr2 != a1;
+	cout << a1 << endl;
+	cout << arr2[0] << endl;//  a1 == arr2[0] 正确
+
+
+
+
+
+
+
 
 	getchar();
 
