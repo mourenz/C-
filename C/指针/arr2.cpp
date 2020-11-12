@@ -13,7 +13,7 @@ int main(){
 	cout << "int* arr长度" << sizeof(arr) << endl; // 3*4 =12
 	cout << "*arr[0]长度" << sizeof(*arr[0]) << endl; // sizeof(int) =4
 
-	for (size_t i = 0; i < sizeof(arr)/sizeof(arr[0]); i++)
+	for (size_t i = 0; i < sizeof(arr) / sizeof(arr[0]); i++)
 	{
 		cout << *arr[i] << endl;
 	}
@@ -31,7 +31,23 @@ int main(){
 	cout << a1 << endl;
 	cout << arr2[0] << endl;//  a1 == arr2[0] 正确
 
+	int d = 20;
+	int* p1 = &d;
+	int** p2 = &p1;
+	cout << **p2 << endl;
 
+
+  //二级指针 存放的是一级指针的地址
+	cout << "二级指针遍历" << endl;
+	int** p = arr2;
+	for (int i = 0; i < 3; i++){
+		for (int j = 0; j < 3; j++){
+			//cout << p[i][j]<<",";
+			//cout << *(p[i] + j) << ",";
+			cout << *(*(p + i) + j) << ",";
+		}
+		cout << endl;
+	}
 
 
 
