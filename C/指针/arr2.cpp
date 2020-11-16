@@ -2,6 +2,20 @@
 #include<iostream>
 using namespace std;
 
+void copyStr(char* str1, char* str2){
+	while (*str1)
+	{
+		str1++; //最后一次结束时 str指针的位置指向 字符结束的 0
+	}
+	while (*str2)
+	{
+		*str1 = *str2;  //第一次 覆盖str1为0的位置的字符
+		str1++;
+		str2++;
+	}
+}
+
+
 int main(){
 
 	//指针数组
@@ -37,7 +51,7 @@ int main(){
 	cout << **p2 << endl;
 
 
-  //二级指针 存放的是一级指针的地址
+	//二级指针 存放的是一级指针的地址
 	cout << "二级指针遍历" << endl;
 	int** p = arr2;
 	for (int i = 0; i < 3; i++){
@@ -48,6 +62,18 @@ int main(){
 		}
 		cout << endl;
 	}
+
+	cout << "字符串拷贝" << endl;
+	char ch1[100] = "hello";
+	char ch2[50] = "world";
+	copyStr(ch1, ch2);
+	for (int i = 0; i < 100; i++){
+		if (*(ch1+i))cout << *(ch1 + i) << ",";
+	}
+	
+
+
+	
 
 
 
