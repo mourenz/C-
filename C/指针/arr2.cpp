@@ -15,6 +15,19 @@ void copyStr(char* str1, char* str2){
 	}
 }
 
+void remove_space(char str[]){
+	char* front = &str[0];
+	char* temp = str;
+	while (*front)
+	{
+		if (*front != ' '){
+			*temp = *front;
+			temp++;
+		}
+		front++;
+	}
+	*temp = 0; // 结束标志
+}
 
 int main(){
 
@@ -68,12 +81,23 @@ int main(){
 	char ch2[50] = "world";
 	copyStr(ch1, ch2);
 	for (int i = 0; i < 100; i++){
-		if (*(ch1+i))cout << *(ch1 + i) << ",";
+		if (*(ch1 + i)){
+			cout << *(ch1 + i) << ",";
+		}
 	}
-	
+	cout << endl;
+
+	cout << "字符串去空格" << endl;
+	char str2[] = { "H    e  ll  o  w  o  r  l  d  " };
+	remove_space(str2);
+	for (int i = 0; i < 31; i++){
+		cout << str2[i] << ",";
+	}
 
 
-	
+
+
+
 
 
 
