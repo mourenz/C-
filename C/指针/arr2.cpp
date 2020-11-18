@@ -29,6 +29,20 @@ void remove_space(char str[]){
 	*temp = 0; // 结束标志
 }
 
+char* findChar(char* str, char ch){
+	while (*str)
+	{
+		if (*str == ch){
+			cout << "存在该字符" << endl;
+			return str;
+		}
+		str++;
+	}
+	cout << "不存在该字符" << endl;
+	return NULL;
+
+}
+
 int main(){
 
 	//指针数组
@@ -93,6 +107,11 @@ int main(){
 	for (int i = 0; i < 31; i++){
 		cout << str2[i] << ",";
 	}
+	cout << endl;
+
+	cout << "寻找指定字符" << endl;
+	char* ch =  findChar("hello world", 'w');
+	cout << *ch << endl;
 
 
 
