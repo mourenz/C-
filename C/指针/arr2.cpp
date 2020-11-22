@@ -43,7 +43,7 @@ char* findChar(char* str, char ch){
 
 }
 
-int main(){
+int main222(){
 
 	//Ö¸ÕëÊı×é
 	int a = 10;
