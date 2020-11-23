@@ -125,6 +125,8 @@ int main222(){
 
 	getchar();
 
+	return 0;
+
 
 
 }
